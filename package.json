@@ -1,0 +1,45 @@
+{
+  "name": "dafabet2",
+  "version": "1.0.0",
+  "description": "![bettilt_maket_404-d](https://github.com/Pasha845/dafabet2/assets/106194295/8fb31567-290a-4fdb-8699-afb5cdef4fec)",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pasha845/dafabet2.git"
+  },
+  "author": "pasha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pasha845/dafabet2/issues"
+  },
+  "homepage": "https://github.com/Pasha845/dafabet2#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
+    "browser-sync": "^2.29.3",
+    "del": "^6.1.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-avif": "^1.1.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-cli": "^2.3.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-image": "^5.1.0",
+    "gulp-notify": "^4.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify-es": "^3.0.0",
+    "gulp-webp": "^4.0.1",
+    "sass": "^1.66.1"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "IE 10"
+  ]
+}
