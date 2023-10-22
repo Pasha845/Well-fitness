@@ -4,6 +4,7 @@ const gulpsass = require('gulp-sass')(require('sass'));
 const cleanCSS = require('gulp-clean-css');
 const autoprefixers = require('gulp-autoprefixer');
 const image = require('gulp-image');
+const svgSprite = require('gulp-svg-sprite');
 const gulpAvif = require('gulp-avif');
 const imagewebp = require('gulp-webp');
 const babel = require('gulp-babel');
@@ -67,6 +68,18 @@ const img = () => {
     .pipe(dest('dist/img'))
 }
 
+const svgSprites = () => {
+  return src('src/img/svg/*.svg')
+    .pipe(svgSprite({
+      mode: {
+        stack: {
+          sprite: '../sprite.svg'
+        }
+      }
+    }))
+    .pipe(dest('dist/img'))
+}
+
 const avif = () => {
   return src('src/img/*.png')
     .pipe(gulpAvif())
@@ -90,4 +103,4 @@ const watchFiles = () => {
 watch('src/**/*.html', htmlMinify)
 watch('src/css/*.scss', styles)
 watch('src/js/*.js', scripts)
-exports.default = series(clean, resources, htmlMinify, styles, scripts, img, avif, webpImages, watchFiles)
+exports.default = series(clean, resources, htmlMinify, styles, scripts, img, svgSprites, avif, webpImages, watchFiles)
