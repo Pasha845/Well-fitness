@@ -588,6 +588,59 @@
                 </div>
               </div>
             </div>
+            <div class="stock__item swiper-slide">
+              <picture>
+                <source srcset="img/stock-4.webp" media="(min-width: 320px) and (max-width: 576px)">
+                <source srcset="img/stock-4.avif" media="(min-width: 577px)">
+                <img srcset="img/stock-4.avif" alt="Stock photo" src="#" width="300" height="300">
+              </picture>
+              <a class="stock__comparison" href="#" aria-label="сравнение">
+                <svg width="17" height="17">
+                  <use xlink:href="img/sprite.svg#stock-comparison"></use>
+                </svg>
+              </a>
+              <a class="stock__selected" href="#" aria-label="выбранные">
+                <svg width="20" height="17">
+                  <use xlink:href="img/sprite.svg#stock-selected"></use>
+                </svg>
+              </a>
+              <div class="stock__cube">
+                <div class="flex">
+                  <p class="stock__is">Скоро ожидается</p>
+                </div>
+                <h3 class="stock__subtitle">Беговая дорожка CardioPower S35</h3>
+                <div class="stock__stars flex">
+                  <p class="stock__raiting">Рейтинг</p>
+                  <svg width="12" height="12">
+                    <use xlink:href="img/sprite.svg#star"></use>
+                  </svg>
+                  <svg width="12" height="12">
+                    <use xlink:href="img/sprite.svg#star"></use>
+                  </svg>
+                  <svg width="12" height="12">
+                    <use xlink:href="img/sprite.svg#star"></use>
+                  </svg>
+                  <svg width="12" height="12">
+                    <use xlink:href="img/sprite.svg#star"></use>
+                  </svg>
+                  <svg width="12" height="12">
+                    <use xlink:href="img/sprite.svg#star"></use>
+                  </svg>
+                </div>
+                <div class="stock__block flex">
+                  <div>
+                    <p class="stock__price">1 134 900 ₽</p>
+                    <p class="stock__old-price">1 134 900 ₽</p>
+                  </div>
+                  <a class="stock__btn flex" href="#">
+                    <svg width="24" height="24">
+                      <use xlink:href="img/sprite.svg#stock-basket"></use>
+                    </svg>
+                    Купить
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <a class="link" href="#">Все товары по акции</a>
@@ -766,7 +819,7 @@
       <div class="container">
         <ul class="banners__list flex reset">
           <li class="banners__item">
-            <svg class="banners__photo" width="60" height="60">
+            <svg class="banners__photo" width="72" height="72">
               <use xlink:href="img/sprite.svg#banners-1"></use>
             </svg>
             <h3 class="banners__subtitle">Помощь покупателю</h3>
@@ -779,7 +832,7 @@
             </a>
           </li>
           <li class="banners__item">
-            <svg class="banners__photo" width="59" height="59">
+            <svg class="banners__photo" width="72" height="72">
               <use xlink:href="img/sprite.svg#banners-2"></use>
             </svg>
             <h3 class="banners__subtitle">Заявка на сервис</h3>
@@ -792,7 +845,7 @@
             </a>
           </li>
           <li class="banners__item">
-            <svg class="banners__photo" width="59" height="59">
+            <svg class="banners__photo" width="72" height="72">
               <use xlink:href="img/sprite.svg#banners-3"></use>
             </svg>
             <h3 class="banners__subtitle">Личный кабинет партнера B2B</h3>
@@ -805,7 +858,7 @@
             </a>
           </li>
           <li class="banners__item">
-            <svg class="banners__photo" width="64" height="55">
+            <svg class="banners__photo" width="72" height="72">
               <use xlink:href="img/sprite.svg#banners-4"></use>
             </svg>
             <h3 class="banners__subtitle">Выставочный зал</h3>
@@ -822,7 +875,7 @@
     </section>
 
     <section class="about">
-      <div class="container">
+      <div class="about__container container">
         <div class="about__list flex">
           <div class="about__item">
             <h2 class="title">О компании</h2>
@@ -858,12 +911,12 @@
 
     <section class="news">
       <div class="container">
-        <ul class="stock__div flex reset">
-          <li class="stock__margin-link">
-            <a class="stock__link" href="#">Новости</a>
+        <ul class="news__div flex reset">
+          <li class="news__margin-link">
+            <a class="news__link" href="#">Новости</a>
           </li>
-          <li class="stock__margin-link">
-            <a class="stock__link" href="#">Блог</a>
+          <li class="news__margin-link">
+            <a class="news__link" href="#">Блог</a>
           </li>
         </ul>
         <div class="news__slider swiper">
@@ -882,9 +935,9 @@
             </div>
             <div class="news__slide swiper-slide">
               <picture>
-                <source srcset="img/news-1.webp" media="(min-width: 320px) and (max-width: 576px)">
-                <source srcset="img/news-1.avif" media="(min-width: 577px)">
-                <img srcset="img/news-1.avif" alt="News photo" src="#" width="315" height="260">
+                <source srcset="img/news-2.webp" media="(min-width: 320px) and (max-width: 576px)">
+                <source srcset="img/news-2.avif" media="(min-width: 577px)">
+                <img srcset="img/news-2.avif" alt="News photo" src="#" width="315" height="260">
               </picture>
               <div class="news__cube">
                 <h3 class="news__subtitle">В продажу поступили тренажеры Nautilus</h3>
@@ -894,9 +947,21 @@
             </div>
             <div class="news__slide swiper-slide">
               <picture>
-                <source srcset="img/news-1.webp" media="(min-width: 320px) and (max-width: 576px)">
-                <source srcset="img/news-1.avif" media="(min-width: 577px)">
-                <img srcset="img/news-1.avif" alt="News photo" src="#" width="315" height="260">
+                <source srcset="img/news-3.webp" media="(min-width: 320px) and (max-width: 576px)">
+                <source srcset="img/news-3.avif" media="(min-width: 577px)">
+                <img srcset="img/news-3.avif" alt="News photo" src="#" width="315" height="260">
+              </picture>
+              <div class="news__cube">
+                <h3 class="news__subtitle">В продажу поступили тренажеры Nautilus</h3>
+                <p class="news__text">Представляем тренажеры Nautilus 626 серии.</p>
+                <p class="news__date">2021.07.18</p>
+              </div>
+            </div>
+            <div class="news__slide swiper-slide">
+              <picture>
+                <source srcset="img/news-4.webp" media="(min-width: 320px) and (max-width: 576px)">
+                <source srcset="img/news-4.avif" media="(min-width: 577px)">
+                <img srcset="img/news-4.avif" alt="News photo" src="#" width="315" height="260">
               </picture>
               <div class="news__cube">
                 <h3 class="news__subtitle">В продажу поступили тренажеры Nautilus</h3>

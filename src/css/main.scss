@@ -424,6 +424,16 @@ p, h2, h3 {
 
   &__icon {
     position: relative;
+    color: $white;
+    transition: color .3s;
+  }
+
+  &__icon:hover {
+    color: $red;
+  }
+
+  &__icon:hover &__count {
+    color: $white;
   }
 
   &__icon:not(:last-child) {
@@ -450,6 +460,7 @@ p, h2, h3 {
     padding-top: 2px;
     font-size: 10px;
     background: #F53B49;
+    transition: color .3s;
   }
 
   &__icon:nth-child(2) &__count {
@@ -554,6 +565,10 @@ p, h2, h3 {
     background: $white;
     cursor: pointer;
     transition: background-color .3s;
+  }
+
+  &__slider-btn:hover {
+    background: $red;
   }
   
   &__prev {
@@ -664,6 +679,7 @@ p, h2, h3 {
 
   &__item {
     position: relative;
+    width: calc(328 / 1280 * 100% - 32px);
   }
 
   &__item picture img {
@@ -671,18 +687,26 @@ p, h2, h3 {
     border-top-right-radius: 6px;
   }
 
-  &__comparison {
-    position: absolute;
-    top: 16px;
-    right: 43px;
-    z-index: 5;
-  }
-
+  &__comparison,
   &__selected {
     position: absolute;
     top: 16px;
-    right: 14.6px;
     z-index: 5;
+    color: #858FA4;
+    transition: color .3s;
+  }
+
+  &__comparison {
+    right: 43px;
+  }
+
+  &__selected {
+    right: 14.6px;
+  }
+
+  &__comparison:hover,
+  &__selected:hover {
+    color: $red;
   }
 
   &__item:hover {
@@ -894,8 +918,12 @@ p, h2, h3 {
     align-items: center;
     border: 1px solid rgba(133, 143, 164, 0.20);
     width: 282px;
-    height: 170px;
+    height: 150px;
     background: $white;
+  }
+
+  &__item:nth-child(-n+5) {
+    height: 170px;
   }
 }
 
@@ -903,7 +931,7 @@ p, h2, h3 {
 
 .banners {
   padding-top: 67.5px;
-  padding-bottom: 60px;
+  padding-bottom: 29.4px;
 
   &__list {
     margin-bottom: 40px;
@@ -987,16 +1015,14 @@ p, h2, h3 {
 /* about */
 
 .about {
-  position: relative;
-  padding-top: 60px;
+  padding-top: 29.4px;
   padding-bottom: 96px;
 
-  &__list {
-    picture img {
-      position: absolute;
-      top: -35px;
-      right: 3px;
-    }
+  &__container {
+    margin: 0;
+    margin-left: auto;
+    margin-right: 12px;
+    max-width: 1684px;
   }
 
   .title {
@@ -1064,6 +1090,7 @@ p, h2, h3 {
 /* news */
 
 .news {
+  padding-top: 60px;
   padding-bottom: 60px;
 
   &__div {
@@ -1071,7 +1098,7 @@ p, h2, h3 {
   }
 
   &__margin-link:not(:last-child) {
-    margin-right: 30px;
+    margin-right: 46px;
   }
 
   &__link {
