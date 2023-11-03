@@ -122,7 +122,6 @@ p, h2, h3 {
   font-size: 30px;
   font-weight: 700;
   line-height: 33px;
-  color: #1A1A25;
 }
 
 .list {
@@ -172,10 +171,9 @@ p, h2, h3 {
 /* header */
 
 .header {
-  padding-bottom: 20px;
   color: $white;
 
-  &__modal-tel {
+  &__modal {
     position: fixed;
     z-index: 99;
     top: 0;
@@ -191,12 +189,13 @@ p, h2, h3 {
     opacity: 0;
   }
   
-  &__modal-tel:target {
+  &__modal:target {
     visibility: visible;
     opacity: 1;
   }
   
-  &__div-tel {
+  &__div-tel,
+  &__div-cabinet {
     position: relative;
     text-align: center;
     border-radius: 6px;
@@ -208,6 +207,11 @@ p, h2, h3 {
     box-shadow: 0px 10px 30px 0px rgba(133, 143, 164, 0.10);
     transition: .5s;
   }
+
+  &__div-cabinet {
+    padding: 60px 70px;
+    padding-bottom: 58px;
+  }
   
   &__modal-tel-close {
     position: absolute;
@@ -216,7 +220,7 @@ p, h2, h3 {
     transition: color .3s;
   }
   
-  &__modal-tel-title {
+  &__modal-title {
     margin-bottom: 20px;
     font-size: 30px;
     font-weight: 700;
@@ -288,6 +292,44 @@ p, h2, h3 {
     background: $red;
     cursor: pointer;
     transition: background-color .3s;
+  }
+
+  &__modal-cabinet-btn {
+    border-radius: 4px;
+    margin-right: 12px;
+    padding: 12px 20px;
+    opacity: 0.7;
+    background: #384255;
+  }
+
+  &__modal-cabinet-subbtn {
+    box-sizing: border-box;
+    border: 1px solid rgba(144, 156, 181, 0.70);
+    border-radius: 4px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #384255;
+  }
+
+  &__cabinet-div {
+    text-align: center;
+    margin-bottom: 21px;
+  }
+
+  &__cabinet-text {
+    margin-right: 12px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #384255;
+  }
+
+
+  &__modal-cabinet-sublink {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19.6px;
+    color: #4B7EE8;
   }
 
   &__subdiv {
@@ -625,7 +667,7 @@ p, h2, h3 {
 .hero {
   border-radius: 10px;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 60px;
   max-width: 1800px;
   background: linear-gradient(180deg, #DEDFE7 0%, rgba(233, 234, 239, 0.00) 100%), #E9EAEF;
