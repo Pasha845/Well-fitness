@@ -36,7 +36,7 @@
     "gulp-svg-sprite": "^2.0.3",
     "gulp-uglify-es": "^3.0.0",
     "gulp-webp": "^4.0.1",
-    "sass": "^1.66.1"
+    "sass": "^1.70.0"
   },
   "browserslist": [
     "last 1 version",
