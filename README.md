@@ -1,3 +1,5 @@
-# Верстка многостраничного сайта для компании Well-fitness
+# Верстка интернет-магазина для компании Well-fitness
 
-![Frame 996](https://github.com/Pasha845/Well-fitness/assets/106194295/b1db0f60-5542-4cc3-bcd3-76996d701d37)
+http://sitdownpls.com.swtest.ru/
+
+![Безымянный](https://github.com/Pasha845/Well-fitness/assets/106194295/58b72989-f254-4468-9c78-7ac3837c07cb)
