@@ -10,7 +10,7 @@ const heroSwiper = new Swiper('.hero__slider', {
 });
 
 const stockSwiper = new Swiper('.stock__slider', {
-  slidesPerView: 5,
+  slidesPerView: "auto",
   spaceBetween: 30,
   navigation: {
     nextEl: ".stock__next",
@@ -19,6 +19,20 @@ const stockSwiper = new Swiper('.stock__slider', {
   },
   scrollbar: {
     hide: true,
+  },
+  breakpoints: {
+    630: {
+      slidesPerView: 2
+    },
+    668: {
+      slidesPerView: 4
+    },
+    1300: {
+      slidesPerView: 4
+    },
+    1500: {
+      slidesPerView: 5
+    }
   }
 });
 
