@@ -3,8 +3,6 @@ const htmlMin = require('gulp-htmlmin');
 const gulpsass = require('gulp-sass')(require('sass'));
 const cleanCSS = require('gulp-clean-css');
 const autoprefixers = require('gulp-autoprefixer');
-const image = require('gulp-image');
-const svgSprite = require('gulp-svg-sprite');
 const gulpAvif = require('gulp-avif');
 const imagewebp = require('gulp-webp');
 const babel = require('gulp-babel');
@@ -16,7 +14,46 @@ const browserSync = require('browser-sync').create();
 
 const clean = () => {
   return del('dist')
+};
+
+const resources = () => {
+  return src('src/resources/**')
+    .pipe(dest('dist'))
 }
+
+const html = () => {
+  return src('src/**/*.html')
+    .pipe(dest('dist'))
+    .pipe(browserSync.stream())
+};
+
+const css = () => {
+  return src('src/scss/*.scss')
+    .pipe(gulpsass({
+      collapseWhitespace: true
+    }))
+    .pipe(dest('dist/css'))
+    .pipe(browserSync.stream())
+};
+
+const js = () => {
+  return src('src/js/*.js')
+    .pipe(sourcemaps.init())
+    .pipe(dest('dist/js'))
+    .pipe(browserSync.stream())
+};
+
+const avif = () => {
+  return src('src/img/*.png')
+    .pipe(gulpAvif())
+    .pipe(dest('src/resources/img'));
+};
+
+const webp = () => {
+  return src('src/img/webp/*.png')
+    .pipe(imagewebp())
+    .pipe(dest('src/resources/img'))
+};
 
 const htmlMinify = () => {
   return src('src/**/*.html')
@@ -24,16 +61,10 @@ const htmlMinify = () => {
       collapseWhitespace: true
     }))
     .pipe(dest('dist'))
-    .pipe(browserSync.stream())
-}
-
-const resources = () => {
-  return src('src/resources/**')
-    .pipe(dest('dist'))
-}
+};
 
 const styles = () => {
-  return src('src/css/*.scss')
+  return src('src/scss/*.scss')
     .pipe(gulpsass({
       collapseWhitespace: true
     }))
@@ -43,13 +74,11 @@ const styles = () => {
     .pipe(cleanCSS({
       level: 2
     }))
-    .pipe(dest('dist/css'))
-    .pipe(browserSync.stream())
-}
+    .pipe(dest('dist/css'));
+};
 
 const scripts = () => {
   return src('src/js/*.js')
-    .pipe(sourcemaps.init())
     .pipe(babel({
       presets: ['@babel/env']
     }))
@@ -57,50 +86,19 @@ const scripts = () => {
       toplevel: true
     }
     ).on('error', notify.onError))
-    .pipe(sourcemaps.write())
     .pipe(dest('dist/js'))
-    .pipe(browserSync.stream())
-}
-
-const img = () => {
-  return src('src/img/*.svg')
-    .pipe(image())
-    .pipe(dest('dist/img'))
-}
-
-const svgSprites = () => {
-  return src('src/img/svg/*.svg')
-    .pipe(svgSprite({
-      mode: {
-        stack: {
-          sprite: '../sprite.svg'
-        }
-      }
-    }))
-    .pipe(dest('dist/img'))
-}
-
-const avif = () => {
-  return src('src/img/*.png')
-    .pipe(gulpAvif())
-    .pipe(dest('dist/img'));
-}
-
-const webpImages = () => {
-  return src('src/img/webp/*.png')
-    .pipe(imagewebp())
-    .pipe(dest('dist/img'))
-}
+};
 
 const watchFiles = () => {
   browserSync.init({
     server: {
       baseDir: 'dist'
     }
-  })
-}
+  });
+};
 
-watch('src/**/*.html', htmlMinify)
-watch('src/css/*.scss', styles)
-watch('src/js/*.js', scripts)
-exports.default = series(clean, resources, htmlMinify, styles, scripts, img, svgSprites, avif, webpImages, watchFiles)
+watch('src/**/*.html', html);
+watch('src/scss/*.scss', css);
+watch('src/js/*.js', js);
+exports.dev = series(clean, html, css, js, avif, webp, resources, watchFiles);
+exports.build = series(clean, htmlMinify, styles, scripts, resources);
