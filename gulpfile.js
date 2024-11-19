@@ -55,6 +55,10 @@ const webp = () => {
     .pipe(dest('src/resources/img'))
 };
 
+const deleteImages = () => {
+  return del(['src/img/*.png', 'src/img/webp/*.png']);
+};
+
 const htmlMinify = () => {
   return src('src/**/*.html')
     .pipe(htmlMin({
@@ -100,5 +104,5 @@ const watchFiles = () => {
 watch('src/**/*.html', html);
 watch('src/scss/*.scss', css);
 watch('src/js/*.js', js);
-exports.dev = series(clean, html, css, js, avif, webp, resources, watchFiles);
+exports.dev = series(clean, html, css, js, avif, webp, deleteImages, resources, watchFiles);
 exports.build = series(clean, htmlMinify, styles, scripts, resources);

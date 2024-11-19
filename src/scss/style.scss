@@ -198,6 +198,12 @@ p, h2, h3 {
   outline: none;
 }
 
+@media (max-width: 576px) {
+  .list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 /* header */
 
 .header {
@@ -692,6 +698,19 @@ p, h2, h3 {
   }
 }
 
+@media (max-width: 576px) {
+  .header {
+    &__cube,
+    &__subcube {
+      flex-direction: column;
+    }
+
+    &__menu {
+      display: none;
+    }
+  }
+}
+
 /* hero */
 
 .hero {
@@ -833,6 +852,14 @@ p, h2, h3 {
   .item:nth-child(6) &__text {
     top: 30.75px;
   }
+
+  @media (max-width: 576px) {
+    .simulators {
+      &__item {
+        grid-row: auto;
+      }
+    }
+  }
 }
 
 /* fitness */
@@ -861,6 +888,15 @@ p, h2, h3 {
   }
 }
 
+@media (max-width: 576px) {
+  .fitness {
+    &__item,
+    &__item:first-child {
+      grid-column: span 3;
+    }
+  }
+}
+
 /* stock */
 
 .stock {
@@ -873,8 +909,9 @@ p, h2, h3 {
     max-width: 1680px;
   }
 
-  &__margin-link:not(:last-child) {
-    margin-right: 39px;
+  &__div {
+    flex-wrap: wrap;
+    gap: 39px;
   }
 
   &__link {
@@ -884,7 +921,7 @@ p, h2, h3 {
     color: #828282;
   }
 
-  &__margin-link:first-child &__link {
+  &__link:first-child {
     font-size: 30px;
     font-weight: 700;
     line-height: 33px;
@@ -1087,6 +1124,14 @@ p, h2, h3 {
   }
 }
 
+@media (max-width: 576px) {
+  .stock {
+    &__div {
+
+    }
+  }
+}
+
 /* ideas */
 
 .ideas {
@@ -1189,6 +1234,20 @@ p, h2, h3 {
   }
 }
 
+@media (max-width: 576px) {
+  .ideas {
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &__item:first-child
+    &__item:nth-child(2),
+    &__item:nth-child(3) {
+      grid-column: span 3;
+    }
+  }
+}
+
 /* brands */
 
 .brands {
@@ -1198,11 +1257,9 @@ p, h2, h3 {
   padding-bottom: 30px;
 
   &__div {
+    flex-wrap: wrap;
+    gap: 30px;
     margin-bottom: 30px;
-  }
-
-  &__margin-link:not(:last-child) {
-    margin-right: 30px;
   }
 
   &__link {
@@ -1322,6 +1379,14 @@ p, h2, h3 {
     color: $red;
     svg {
       margin-left: 8px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .banners {
+    &__list {
+      flex-direction: column;
     }
   }
 }
@@ -1580,6 +1645,10 @@ p, h2, h3 {
     justify-content: space-between;
   }
 
+  &__logo {
+    flex-shrink: 0;
+  }
+
   &__copyright {
     margin-top: 17px;
     font-size: 14px;
@@ -1639,5 +1708,20 @@ p, h2, h3 {
 
   &__margin-img:not(:last-child) {
     margin-right: 30px;
+  }
+
+  @media (max-width: 576px) {
+    .footer {
+      &__div,
+      &__flex,
+      &__subdiv {
+        flex-direction: column;
+      }
+
+      &__new,
+      &__icons {
+        margin-right: 0;
+      }
+    }
   }
 }
