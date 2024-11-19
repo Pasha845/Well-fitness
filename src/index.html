@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Главная</title>
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
@@ -12,7 +12,7 @@
   <header class="header">
     <div class="header__subdiv">
       <div class="header__cube container flex">
-        <div class="flex">
+        <div class="header__sucube flex">
           <a class="header__logo" href="#">
             <img src="img/logo.svg" alt="logo" width="280" height="29">
           </a>
@@ -34,7 +34,7 @@
             <option value="Vladivostok">Владивосток</option>
           </select>
         </div>
-        <div class="flex">
+        <div class="header__sucube flex">
           <div class="header__subcube">
             <a class="header__sublink" href="#">Для дилеров</a>
             <a class="header__subbtn" href="#">Become a Partner</a>
@@ -101,7 +101,7 @@
               </svg>
             </a>
           </div>
-          <ul class="flex reset">
+          <ul class="header__menu flex reset">
             <li class="header__margin-link">
               <a class="header__link" href="#">Бренды</a>
             </li>
@@ -411,17 +411,11 @@
 
     <section class="stock">
       <div class="stock__container container">
-        <ul class="stock__div flex reset">
-          <li class="stock__margin-link">
-            <a class="stock__link" href="#">Акция</a>
-          </li>
-          <li class="stock__margin-link">
-            <a class="stock__link" href="#">Новинки</a>
-          </li>
-          <li class="stock__margin-link">
-            <a class="stock__link" href="#">Мы рекомендуем</a>
-          </li>
-        </ul>
+        <div class="stock__div flex">
+          <a class="stock__link" href="#">Акция</a>
+          <a class="stock__link" href="#">Новинки</a>
+          <a class="stock__link" href="#">Мы рекомендуем</a>
+        </div>
         <button class="slider-btn prev stock__prev">
           <svg width="17" height="17" xmlns="http://www.w3.org/2000/svg">
             <path d="m14.052378,6.803522l-13,0m0,0l5.4247,-5.5m-5.4247,5.5l5.4247,5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -920,26 +914,14 @@
     <section class="brands">
       <div class="container">
         <h2 class="title">Популярные бренды</h2>
-        <ul class="brands__div flex reset">
-          <li class="brands__margin-link">
-            <a class="brands__link" href="#">Беговые дорожки</a>
-          </li>
-          <li class="brands__margin-link">
-            <a class="brands__link" href="#">Эллиптические тренажеры</a>
-          </li>
-          <li class="brands__margin-link">
-            <a class="brands__link" href="#">Велотренажеры</a>
-          </li>
-          <li class="brands__margin-link">
-            <a class="brands__link" href="#">Силовые тренажеры</a>
-          </li>
-          <li class="brands__margin-link">
-            <a class="brands__link" href="#">Батуты</a>
-          </li>
-          <li class="brands__margin-link">
-            <a class="brands__link" href="#">Игровые столы</a>
-          </li>
-        </ul>
+        <div class="brands__div flex">
+          <a class="brands__link" href="#">Беговые дорожки</a>
+          <a class="brands__link" href="#">Эллиптические тренажеры</a>
+          <a class="brands__link" href="#">Велотренажеры</a>
+          <a class="brands__link" href="#">Силовые тренажеры</a>
+          <a class="brands__link" href="#">Батуты</a>
+          <a class="brands__link" href="#">Игровые столы</a>
+        </div>
         <ul class="brands__list reset">
           <li class="brands__item">
             <picture>
